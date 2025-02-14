@@ -8,7 +8,7 @@
         <label for="lastname">Last Name</label>
         <input type="text" id="lastname" wire:model="lastname"><br><br>
 
-        <input type="submit" ></input>
+        <input type="submit" value="Save"></input>
 
         <h1>Full Name: {{$fullname}}</h1>
     </form>
