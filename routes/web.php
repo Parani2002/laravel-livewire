@@ -12,4 +12,4 @@ Route::get('/counter', Counter::class);
 
 Route::get('/student/create',CreateStudent::class);
 
-Route::post('/student',[CreateStudent::class,'save']);
+// Route::post('/student',[CreateStudent::class,'save']);

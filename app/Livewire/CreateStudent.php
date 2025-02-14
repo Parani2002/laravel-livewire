@@ -8,17 +8,19 @@ use Livewire\Attributes\Validate;
 
 class CreateStudent extends Component
 {
-    #[Validate('required|min:5')]
+   
     public string $firstname = '';
 
-    #[Validate('required|min:5')] 
+    
     public string $lastname = '';
 
-    #[Validate('required')] 
+   
     public int $age =0;
 
-    #[Validate('required')] 
+  
     public string $address= '';
+
+    public $fullname='';
 
     public function render()
     {
@@ -26,7 +28,9 @@ class CreateStudent extends Component
     }
 
     public function save(){
-        dd('save');
+        $this->fullname = $this->firstname . $this->lastname;
+        
+
 
     }
 }
