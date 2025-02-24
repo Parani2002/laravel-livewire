@@ -6,6 +6,7 @@
         <title>Laravel Crash Course</title>
     </head>
     <body>
+        <@livewire('header')
         {{ $slot }}
     </body>
 </html>

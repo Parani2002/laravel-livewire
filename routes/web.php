@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
-use App\Livewire\CreateStudent;
+use App\Livewire\Students\CreateStudent;
+use App\Livewire\Students\CreateStudent as StudentsCreateStudent;
 
 Route::get('/', function () {
     return view('welcome');

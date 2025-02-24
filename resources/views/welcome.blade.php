@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>This is welcome page</h1>
   
 </body>
 </html>
