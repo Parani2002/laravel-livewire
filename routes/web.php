@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('/counter', Counter::class);
 
-Route::get('/student/create',CreateStudent::class);
+Route::get('/student/create',CreateStudent::class)->name('students.create');
 
 Route::get('/student/edit',EditStudent::class);
 

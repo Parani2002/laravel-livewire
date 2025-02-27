@@ -1,7 +1,7 @@
 <div>
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
     <h1>Student Create Form</h1>
-    <form action="/student" wire:submit="save">
+    <form  wire:submit="save"  method="post">
         <label for="firstname">First Name</label>
         <input type="text" id="firstname" wire:model="firstname"> <br><br>
        
@@ -29,7 +29,7 @@
             <option value="BSIS">BSIS</option>
         </select><br><br>
 
-        <input type="submit" value="Save"></input>
+        <button type="submit">Create Student</button>
 
       
     </form>
