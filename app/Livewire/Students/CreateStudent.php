@@ -34,8 +34,16 @@ class CreateStudent extends Component
             'phone' => 'required|min:10',
             'course' => 'required',
         ]);
-        dd($student);
-        Student::create($student);
+       
+       Student::create([
+            'firstname' => $this->firstname,
+            'lastname' => $this->lastname,
+            'age' => $this->age,
+            'address' => $this->address,
+            'email' => $this->email,
+            'phone' => $this->phone,
+            'course' => $this->course,
+        ]);
         return redirect('/students');
     }
 }
