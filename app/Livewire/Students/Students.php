@@ -2,12 +2,14 @@
 
 namespace App\Livewire\Students;
 
+use App\Models\Student;
 use Livewire\Component;
 
 class Students extends Component
 {
     public function render()
     {
-        return view('livewire.students.students');
+        $students = Student::all();
+        return view('livewire.students.students',compact('students'));
     }
 }

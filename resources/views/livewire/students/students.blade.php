@@ -7,7 +7,7 @@
                 <p class="card-text">{{ $student->email }}</p>
                 <p class="card-text">{{ $student->phone }}</p>
                 <p class="card-text">{{ $student->address }}</p>
-                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">Edit</a>
+                {{-- <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">Edit</a> --}}
                 <button wire:click="delete({{ $student->id }})" class="btn btn-danger">Delete</button>
             </div>
         </div>

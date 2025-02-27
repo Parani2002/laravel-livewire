@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->integer('age');
+            $table->string('address');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('course');
+            $table->softDeletes('deleted_at', precision: 0);
             $table->timestamps();
         });
     }

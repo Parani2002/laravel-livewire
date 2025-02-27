@@ -23,4 +23,4 @@ Route::get('/students',Students::class);
 
 
 
-// Route::post('/student',[CreateStudent::class,'save']);
+Route::post('/student',[CreateStudent::class,'save']);
