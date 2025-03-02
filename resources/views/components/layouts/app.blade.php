@@ -6,9 +6,11 @@
         <title>Laravel Crash Course</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="./node_modules/preline/dist/preline.js"></script>
+        @fluxAppearance
     </head>
     <body>
-        {{-- <@livewire('header') --}}
+    </x-header>
         {{ $slot }}
+        @fluxScripts
     </body>
 </html>

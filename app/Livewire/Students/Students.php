@@ -12,7 +12,7 @@ class Students extends Component
         $students = Student::all();
         return view('livewire.students.students',compact('students'));
     }
-    public function delete($id)
+    public function deleteStudent($id)
     {
         Student::destroy($id);
         return redirect('/students');
