@@ -7,7 +7,7 @@
         </div>
         <div class="ml-4">
           <h2 class="text-xl font-bold">{{$title}}</h2>
-          <p class="text-lg">Average: <span class="font-semibold">{{$count}}</span></p>
+          <p class="text-lg">Average: <span class="font-semibold"></span></p>
         </div>
       </div>
 

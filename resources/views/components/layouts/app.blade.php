@@ -11,11 +11,22 @@
     </head>
     <body>
         {{-- Include header component properly if needed --}}
-    <x-header />
-       <x-sidebar />
 
-        {{ $slot }}
-
-        <x-footer />
+        <div class="flex flex-col min-h-screen">
+            <!-- Main Content -->
+            <x-header />
+            <x-sidebar />
+            <div class="flex-grow">
+                <!-- Your page content goes here -->
+                {{ $slot }}
+            </div>
+        
+            <!-- Footer -->
+            <div class="mt-auto">
+                <x-footer />
+            </div>
+        </div>
+        
+     
     </body>
 </html>
