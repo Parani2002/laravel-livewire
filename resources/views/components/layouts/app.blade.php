@@ -10,16 +10,19 @@
         <script src="https://cdn.jsdelivr.net/npm/preline@latest/dist/preline.js"></script>
     </head>
     <body>
-        {{-- Include header component properly if needed --}}
-
+        
         <div class="flex flex-col min-h-screen">
-            <!-- Main Content -->
             <x-header />
-            <x-sidebar />
-            <div class="flex-grow">
-                <!-- Your page content goes here -->
-                {{ $slot }}
+            <div class="flex ">
+                <div>
+                    <x-sidebar />
+                </div>
+                <div class="flex-grow">
+                    {{ $slot }}
+                </div>
             </div>
+        
+          
         
             <!-- Footer -->
             <div class="mt-auto">
