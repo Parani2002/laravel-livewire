@@ -6,10 +6,10 @@
   
       <!-- Navigation Links (Hidden in Mobile) -->
       <nav class="hidden md:flex space-x-6">
-        <a href="/" wire:navigate class="hover:underline">Dashboard</a>
-        <a href="/students" wire:navigate class="hover:underline">Students</a>
-        <a href="#" class="hover:underline">Courses</a>
-        <a href="#" class="hover:underline">Reports</a>
+        <a href="{{ route('dashboard') }}" wire:navigate class="hover:underline">Dashboard</a>
+        <a href="{{route('students')}}" wire:navigate class="hover:underline">Students</a>
+        <a href="{{route('courses')}}" wire:navigate class="hover:underline">Courses</a>
+        <a href="{{route('teachers')}}" wire:navigate class="hover:underline">Teachers</a>
       </nav>
   
       <!-- User Profile Dropdown -->

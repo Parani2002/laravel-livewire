@@ -15,6 +15,6 @@ class Students extends Component
     public function deleteStudent($id)
     {
         Student::destroy($id);
-        return redirect('/students');
+        return redirect('/students')->with('success','Student Deleted Successfully');
     }
 }
