@@ -6,8 +6,8 @@
   
       <!-- Navigation Links (Hidden in Mobile) -->
       <nav class="hidden md:flex space-x-6">
-        <a href="/" class="hover:underline">Dashboard</a>
-        <a href="/students" class="hover:underline">Students</a>
+        <a href="/" wire:navigate class="hover:underline">Dashboard</a>
+        <a href="/students" wire:navigate class="hover:underline">Students</a>
         <a href="#" class="hover:underline">Courses</a>
         <a href="#" class="hover:underline">Reports</a>
       </nav>
