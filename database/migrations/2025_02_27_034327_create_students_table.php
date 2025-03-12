@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('course');
-            $table->softDeletes();
+            $table->softDeletes('deleted_at', precision: 0);
           
             $table->timestamps();
         });
