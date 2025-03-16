@@ -17,4 +17,8 @@ class Payment extends Model
         'user_id',
         'deleted_at',
     ];
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

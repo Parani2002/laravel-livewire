@@ -18,4 +18,8 @@ class Student extends Model
         'course',
         
     ];
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }
