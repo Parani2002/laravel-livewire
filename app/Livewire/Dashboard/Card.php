@@ -14,7 +14,7 @@ class Card extends Component
     public function mount($title,$count)
     {
         $this->Studentcount = Student::count();
-        $this->Teacherscount = 0;
+        $this->Teacherscount = 100;
         $this->title = $title;
       
     }
