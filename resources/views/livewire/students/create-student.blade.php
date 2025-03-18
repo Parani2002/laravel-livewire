@@ -51,15 +51,25 @@
             </div>
 
             <div>
+                <label for="department" class="block text-gray-700 font-semibold">Department</label>
+                <select id="department" wire:model="department_id" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300">
+                    <option value="">Select Department</option>
+                    @foreach ($departments as $department)
+                        <option value="{{ $department->id}}" wire:click = 'updatedSelectedDepartment'>{{ $department->name }}</option>
+                    @endforeach
+                </select>
+                @error('course') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div>
                 <label for="course" class="block text-gray-700 font-semibold">Course</label>
                 <select id="course" wire:model="course" 
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300">
                     <option value="">Select Course</option>
-                    @foreach ($courses as $course)
+                    @foreach ($department -> courses as $course)
                         <option value="{{ $course->name }}">{{ $course->name }}</option>
                     @endforeach
-                   
-                   
                 </select>
                 @error('course') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
             </div>

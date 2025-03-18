@@ -3,6 +3,7 @@
 namespace App\Livewire\Students;
 
 use App\Models\Course;
+use App\Models\Department;
 use App\Models\Payment;
 use App\Models\Student;
 use App\Models\StudentAdmission;
@@ -18,17 +19,27 @@ class CreateStudent extends Component
     public string $email= '';
     public string $phone= '';
     public string $course= '';
+    public $courses = [];
+   
     public int $student_id=0;
     public  float $admission_fee=5000.00;
     public string $status='';
     public int $user_id=1;
     public $deleted_at='';
+    public int $department_id=0;
 
     public function render()
     {
-        $courses = Course::all();
-        return view('livewire.students.create-student',compact('courses'));
+        $this -> courses = Course::all();
+        $departments = Department::all();
+     $department = Department::find($this->department_id);
+        return view('livewire.students.create-student',compact('departments','department'));
         
+    }
+    public function updatedSelectedDepartment($departmentId)
+    {
+        $this->courses = Course::where('department_id', $departmentId)->get();
+     
     }
 
     public function save()
