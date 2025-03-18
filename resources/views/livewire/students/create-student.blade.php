@@ -54,9 +54,12 @@
                 <label for="course" class="block text-gray-700 font-semibold">Course</label>
                 <select id="course" wire:model="course" 
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300">
-                    <option value="BSCS">Software Engineering</option>
-                    <option value="BSIT">Computer Science</option>
-                    <option value="BSIS">Artificial Intelligence</option>
+                    <option value="">Select Course</option>
+                    @foreach ($courses as $course)
+                        <option value="{{ $course->name }}">{{ $course->name }}</option>
+                    @endforeach
+                   
+                   
                 </select>
                 @error('course') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
             </div>

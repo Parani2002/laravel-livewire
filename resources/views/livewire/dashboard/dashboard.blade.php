@@ -62,7 +62,7 @@
                             <th class="py-2 px-4 border border-gray-300">Last Name</th>
                             <th class="py-2 px-4 border border-gray-300">Course</th>
                             <th class="py-2 px-4 border border-gray-300">Phone</th>
-                            <th class="py-2 px-4 border border-gray-300">Amount</th>
+                          
                         </tr>
                     </thead>
                     <tbody>
@@ -73,9 +73,7 @@
                             <td class="py-2 px-4 border border-gray-300 text-center">{{ $new_student->lastname }}</td>
                             <td class="py-2 px-4 border border-gray-300 text-center">{{ $new_student->course }}</td>
                             <td class="py-2 px-4 border border-gray-300 text-center">{{ $new_student->phone }}</td>
-                            <td class="py-2 px-4 border border-gray-300 text-center font-semibold text-green-600">
-                              
-                            </td>
+                           
                         </tr>
                         @endforeach
                     </tbody>
@@ -94,7 +92,7 @@
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: [],
         datasets: [{
           label: '# of Votes',
           data: [12, 19, 3, 5, 2, 3],

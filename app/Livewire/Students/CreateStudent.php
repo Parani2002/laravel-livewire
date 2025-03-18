@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Students;
 
+use App\Models\Course;
 use App\Models\Payment;
 use App\Models\Student;
 use App\Models\StudentAdmission;
@@ -25,7 +26,8 @@ class CreateStudent extends Component
 
     public function render()
     {
-        return view('livewire.students.create-student');
+        $courses = Course::all();
+        return view('livewire.students.create-student',compact('courses'));
         
     }
 
