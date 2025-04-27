@@ -13,7 +13,10 @@
         <a href="#" class="flex items-center p-3 hover:bg-blue-700 rounded">
             <span class="ml-3">📚 Classes</span>
         </a>
-        <a href="#" class="flex items-center p-3 hover:bg-blue-700 rounded">
+        <a href="{{ route('payments.create') }}" class="flex items-center p-3 hover:bg-blue-700 rounded">
+            <span class="ml-3">⚙️ Payments</span>
+        </a>
+        <a href="" class="flex items-center p-3 hover:bg-blue-700 rounded">
             <span class="ml-3">⚙️ Settings</span>
         </a>
     </nav>

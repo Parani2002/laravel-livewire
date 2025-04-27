@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 text-white py-6">
+<footer class="bg-gray-800 text-white py-2">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
         
@@ -8,16 +8,11 @@
           <p class="mt-2 text-gray-400">Managing students efficiently with ease.</p>
         </div>
   
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold">Quick Links</h3>
-          <ul class="mt-2 space-y-2">
-            <li><a href="#" class="hover:text-blue-400">Dashboard</a></li>
-            <li><a href="#" class="hover:text-blue-400">Students</a></li>
-            <li><a href="#" class="hover:text-blue-400">Courses</a></li>
-            <li><a href="#" class="hover:text-blue-400">Reports</a></li>
-          </ul>
+        <!-- Copyright -->
+        <div class="mt-6 text-center text-gray-400 text-sm">
+          © 2025 Student Management System. All rights reserved.
         </div>
+       
   
         <!-- Social Media Links -->
         <div>
@@ -43,10 +38,7 @@
   
       </div>
   
-      <!-- Copyright -->
-      <div class="mt-6 text-center text-gray-400 text-sm">
-        © 2025 Student Management System. All rights reserved.
-      </div>
+    
     </div>
   </footer>
   

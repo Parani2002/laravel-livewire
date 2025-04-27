@@ -1,7 +1,10 @@
 <div class="overflow-x-auto flex flex-col space-y-4 p-8">
-    <button class=" flex justify-end ">
+    <button class=" flex justify-end gap-2">
         <a href="{{ route('students.create') }}" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
             Add Student
+        </a>
+        <a href="{{ route('students.export') }}" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
+            Student Export
         </a>
     </button>
   <table class="min-w-full border border-gray-200 divide-y divide-gray-200 dark:border-gray-700 dark:divide-gray-700 shadow-lg rounded-lg overflow-hidden">
