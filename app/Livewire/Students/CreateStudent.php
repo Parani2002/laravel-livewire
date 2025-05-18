@@ -14,33 +14,40 @@ class CreateStudent extends Component
 {
     public string $firstname = '';
     public string $lastname = '';
-    public int $age =0;
-    public string $address= '';
-    public string $email= '';
-    public string $phone= '';
-    public string $course= '';
+    public int $age = 0;
+    public string $address = '';
+    public string $email = '';
+    public string $phone = '';
+    public int $course_id = 0;
+    public string $course = '';
     public $courses = [];
-   
-    public int $student_id=0;
-    public  float $admission_fee=5000.00;
-    public string $status='';
-    public int $user_id=1;
-    public $deleted_at='';
-    public int $department_id=0;
+
+    public int $student_id = 0;
+    public  float $admission_fee = 5000.00;
+    public string $status = '';
+    public int $user_id = 1;
+    public $deleted_at = '';
+    public int $department_id = 0;
+
 
     public function render()
     {
-        $this -> courses = Course::all();
+
+       
         $departments = Department::all();
-     $department = Department::find($this->department_id);
-        return view('livewire.students.create-student',compact('departments','department'));
-        
+        $department = Department::find($this->department_id);
+        return view('livewire.students.create-student', compact('departments', 'department'));
     }
-    public function updatedSelectedDepartment($departmentId)
-    {
-        $this->courses = Course::where('department_id', $departmentId)->get();
-     
-    }
+
+
+   public function updatedDepartmentId($department_id)
+{
+    logger("Department changed to: " . $this -> department_id);
+    $this->courses = Course::where('department_id', $this -> department_id);
+
+}
+
+
 
     public function save()
     {
@@ -51,7 +58,7 @@ class CreateStudent extends Component
             'address' => 'required',
             'email' => 'required|email',
             'phone' => 'required|min:10',
-            'course' => 'required',
+            'course_id' => 'required',
         ]);
         DB::beginTransaction();
         try {
@@ -63,17 +70,20 @@ class CreateStudent extends Component
                 'address' => $this->address,
                 'email' => $this->email,
                 'phone' => $this->phone,
-                'course' => $this->course,
+                'course_id' => $this->course_id,
+                'department_id' => $this->department_id,
             ]);
+            $this->course = Course::find($this->course_id)->name;
+
             //insert into student_admissions table
             $student_admission = StudentAdmission::create([
                 'firstname' => $this->firstname,
                 'lastname' => $this->lastname,
                 'phone' => $this->phone,
                 'student_id' => $student->id,
-                'admission_fee'=> $this->admission_fee,
-                'status'=> $this->status,
-                'user_id'=> $this->user_id,
+                'admission_fee' => $this->admission_fee,
+                'status' => $this->status,
+                'user_id' => $this->user_id,
                 'course' => $this->course,
                 'deleted_at' => null,
             ]);
