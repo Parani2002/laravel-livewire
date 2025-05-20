@@ -1,6 +1,6 @@
-<div class="flex justify-center items-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-lg p-6 bg-white shadow-lg rounded-xl">
-        <h1 class="text-2xl font-bold text-blue-800 mb-4 text-center">Student Create Form</h1>
+<div class="flex justify-center  min-h-screen bg-gray-100">
+    <div class="w-full  p-6 shadow-lg rounded-xl">
+        <h1 class="text-2xl font-bold text-blue-800 mb-4 text-left">Student Create Form</h1>
         
         <form wire:submit="save" method="post" class="space-y-4" id="studentForm">
             <div class="grid grid-cols-2 gap-4">
@@ -35,12 +35,21 @@
     </div>
 </div>
           
+<div class="grid grid-cols-2 gap-4">
+
 
             <div>
                 <label for="phone" class="block text-gray-700 font-semibold">Phone</label>
                 <input type="text" id="phone" wire:model="phone" 
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300">
                 @error('phone') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            </div>
+              <div>
+                <label for="gender" class="block text-gray-700 font-semibold">Gender</label>
+                <input type="text" id="phone" wire:model="phone" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300">
+                @error('phone') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            </div>
             </div>
 
             <div>
@@ -69,18 +78,15 @@
 
             <div>
                 <label for="course" class="block text-gray-700 font-semibold">Course</label>
-                @if(!empty($courses))
-                <select wire:model="course_id">
+              
+                <select wire:model="course_id"  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300">
                      <option value="">Select Course</option>
                             @foreach($courses as $course)
                                 <option value="{{ $course->id }}">{{ $course->name }}</option>
                             @endforeach
                 </select>
-                @else
-                    <select>
-                        <option value="">Select Course</option>
-                    </select>
-                @endif
+               
+               
                 @error('course_id') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
             </div>
 
@@ -91,23 +97,4 @@
         </form>
     </div>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let form = document.getElementById('studentForm');
-        let inputs = form.querySelectorAll('input, select');
 
-        inputs.forEach((input, index) => {
-            input.addEventListener('keydown', function(event) {
-                if(inputs[index].value && event.key === 'Enter') {
-                    let nextInput = inputs[index + 1];
-                    if(nextInput) {
-                        nextInput.focus();
-                    }
-                }else{
-                    return;
-                }
-               
-            });
-        });
-    });
-</script>
