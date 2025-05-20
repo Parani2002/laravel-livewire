@@ -20,7 +20,7 @@ class CreateStudent extends Component
     public string $phone = '';
     public int $course_id = 0;
     public string $course = '';
-    public $courses = [];
+
 
     public int $student_id = 0;
     public  float $admission_fee = 5000.00;
@@ -33,19 +33,19 @@ class CreateStudent extends Component
     public function render()
     {
 
-       
+       $courses = Course::all();
         $departments = Department::all();
         $department = Department::find($this->department_id);
-        return view('livewire.students.create-student', compact('departments', 'department'));
+        return view('livewire.students.create-student', compact('departments', 'department','courses'));
     }
 
 
-   public function updatedDepartmentId($department_id)
-{
-    logger("Department changed to: " . $this -> department_id);
-    $this->courses = Course::where('department_id', $this -> department_id);
+//    public function updatedDepartmentId($department_id)
+// {
+    
+//     $this->courses = Course::where('department_id', $this -> department_id);
 
-}
+// }
 
 
 
@@ -58,7 +58,8 @@ class CreateStudent extends Component
             'address' => 'required',
             'email' => 'required|email',
             'phone' => 'required|min:10',
-            'course_id' => 'required',
+            'course_id' => 'required|numeric',
+            'department_id' => 'required|numeric',
         ]);
         DB::beginTransaction();
         try {
