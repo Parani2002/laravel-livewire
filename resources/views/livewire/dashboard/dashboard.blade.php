@@ -6,12 +6,7 @@
 
     </div>
 
-    <div class="container mx-auto p-4 w-1/2 h-1/2 flex flex-row justify-center items-center">
-        <canvas id="myChart"></canvas>
-        
-      </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
     <div class="container mx-auto p-4">
