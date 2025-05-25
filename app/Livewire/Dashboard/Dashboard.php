@@ -12,10 +12,11 @@ class Dashboard extends Component
     {
         $pending_payments = Payment::where('status', 'pending')->get();
         $new_students = Student::all() ;
-        //dd($pending_payments);
+      $students_count = Student::count();
         return view('livewire.dashboard.dashboard', [
             'pending_payments' => $pending_payments,
-            'new_students' => $new_students
+            'new_students' => $new_students,
+            'students_count' => $students_count,
         ]);
     }
 }
